@@ -4,7 +4,7 @@ let sistemaVendas = () =>
     let vetVendedores = []
     let vetVendas = []
     do {
-        opcao = Number(prompt(`Informe: \n1. Cadastrar vendedor  \n2. Cadastrar venda \n3. Consulta vendedores \n4. Sair`))
+        opcao = Number(prompt(`Informe: \n1. Cadastrar vendedor  \n2. Cadastrar venda \n3. Procura venda \n4. Sair`))
         switch (opcao)
         {
             case 1: let objeto =
@@ -44,6 +44,7 @@ let sistemaVendas = () =>
                 let achou1 = false
                 for (let i=0;i<vetVendas.length;i++)
                 {
+                    // não podemos cadastrar duas vendas para um mesmo vendedor no mês
                     if ((vetVendas[i].codigo == objeto1.codigo) && (vetVendas[i].mes == objeto1.mes))
                     {
                         achou1 = true // encontrei - não podemos cadastrar venda
@@ -60,10 +61,24 @@ let sistemaVendas = () =>
                 console.log(vetVendas)
                 break
             case 3:
-                console.log(vetVendedores)
-                break    
-            case 4: alert(`O programa será encerrado`)
+                let codigo = Number(prompt(`Informe o código do vendedor`))
+                let mes = Number(prompt(`Informe o mês da venda`))
+                // percorre vetor de vendas
+                let achou3 = false
+                for(let i=0;i<vetVendas.length;i++) {
+                    if ((vetVendas[i].codigo == codigo) && (vetVendas[i].mes == mes)){
+                    console.log(`O valor da venda do funcionário ${codigo} no mês `)
+                    achou3 = true
+                    }
+                }
+                if (!achou3)
+                {
+                    console.log(`Venda não encontrada para este funcionário neste mês`)
+                }
                 break
+                  
+            case 4: alert(`O programa será encerrado`)
+                break  
             default: alert(`Opção inválida`)            
         }
     } 
