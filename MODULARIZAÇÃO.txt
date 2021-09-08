@@ -1,0 +1,65 @@
+** modularização de programas **
+
+	criação de funções
+
+	TORNAR UM PROGRAMA GRANDE EM SUBPROGRAMAS MENORES
+
+
+
+	PQ É VANTAJOSO? 
+
+	vantagens: organização do código, manutenção do código, reutilização do código
+
+
+
+FUNCTION PRINCIPAL() 
+{
+
+	f1();
+	f2();
+	f3();
+}
+
+function f1()
+{
+}
+
+function f2()
+{
+}
+
+function f3()
+{
+}
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+				ESCOPO DE VARIÁVEIS
+
+let 
+a variável existe apenas no escopo onde é declarada
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+				PASSAGEM DE PARâMETRO DE UMA FUNÇÃO
+Quando chamamos uma função, podemos passar 
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+				RETORNO DE UMA FUNÇÃO
+
+let a = 5
+let b = soma(a)
+
+function soma(a)
+{
+return (a+10)
+}
